@@ -9,7 +9,7 @@ const lenis = new Lenis({
     gestureDirection: 'vertical',
     smooth: true,
     mouseMultiplier: 1,
-    smoothTouch: false,
+    smoothTouch: false, // Keep false to allow native iOS/Android momentum scrolling
     touchMultiplier: 2,
     infinite: false,
 });
@@ -195,22 +195,18 @@ gsap.to('.cert-list li', {
     }
 });
 
-// Mobile menu toggle (simple version for this UI)
+// Mobile menu toggle (cleaner version using CSS classes)
 const mobileBtn = document.querySelector('.mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
+const navItems = document.querySelectorAll('.nav-link');
 
 mobileBtn.addEventListener('click', () => {
-    // Basic toggle - would normally be animated via GSAP
-    if (navLinks.style.display === 'flex') {
-        navLinks.style.display = 'none';
-    } else {
-        navLinks.style.display = 'flex';
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.position = 'absolute';
-        navLinks.style.top = '100%';
-        navLinks.style.left = '0';
-        navLinks.style.width = '100%';
-        navLinks.style.background = 'var(--bg-darker)';
-        navLinks.style.padding = '20px';
-    }
+    navLinks.classList.toggle('active');
+});
+
+// Close mobile menu when a link is clicked
+navItems.forEach(item => {
+    item.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
 });
