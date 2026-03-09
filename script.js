@@ -48,6 +48,14 @@ if (window.innerWidth > 768) {
             duration: 0.8,
             ease: "power3.out"
         });
+
+        // 3D Parallax effect on Hero Background
+        const heroBg = document.querySelector('.hero-bg');
+        if (heroBg && window.scrollY < window.innerHeight) {
+            const xAxis = (window.innerWidth / 2 - posX) / 60;
+            const yAxis = (window.innerHeight / 2 - posY) / 60;
+            heroBg.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg) scale(1.05)`;
+        }
     });
 
     // Add hover effect to links and buttons
