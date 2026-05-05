@@ -199,24 +199,6 @@ h1, h2, h3, h4, .logo {
     justify-content: center;
     padding: 0 10%;
     position: relative;
-    perspective: 1000px;
-    overflow: hidden;
-}
-
-.hero-bg {
-    position: absolute;
-    top: -5%;
-    left: -5%;
-    width: 110%;
-    height: 110%;
-    /* We'll instruct the user to name the image profile.jpg */
-    background-image: url('profile.jpg');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.2;
-    z-index: -1;
-    transform-origin: center;
-    transition: transform 0.1s ease-out;
 }
 
 .hero-intro {
@@ -446,6 +428,98 @@ h1, h2, h3, h4, .logo {
     color: var(--accent);
 }
 
+/* Projects Slider */
+.projects-slider-wrapper {
+    margin-top: 80px;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.slider-track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.slide-card {
+    min-width: calc(50% - 15px);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 40px;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.slide-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(94, 106, 210, 0.3);
+    transform: translateY(-10px);
+}
+
+.slide-content h4 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.slide-content p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+.slide-tech {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.slide-tech span {
+    font-size: 0.85rem;
+    padding: 5px 15px;
+    background: rgba(94, 106, 210, 0.1);
+    color: var(--accent);
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.slider-controls {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: flex-end;
+}
+
+.slider-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-primary);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: none;
+    transition: var(--transition);
+}
+
+.slider-btn:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    transform: scale(1.1);
+}
+
 /* Education & Certs */
 .edu-grid {
     display: grid;
@@ -629,6 +703,19 @@ a.contact-item:hover i {
     
     .timeline-content h3 {
         font-size: 1.5rem;
+    }
+
+    .slide-card {
+        min-width: 100%;
+        padding: 30px 20px;
+    }
+
+    .slide-content h4 {
+        font-size: 1.5rem;
+    }
+
+    .slider-controls {
+        justify-content: center;
     }
 
     .edu-grid {
