@@ -48,14 +48,6 @@ if (window.innerWidth > 768) {
             duration: 0.8,
             ease: "power3.out"
         });
-
-        // 3D Parallax effect on Hero Background
-        const heroBg = document.querySelector('.hero-bg');
-        if (heroBg && window.scrollY < window.innerHeight) {
-            const xAxis = (window.innerWidth / 2 - posX) / 60;
-            const yAxis = (window.innerHeight / 2 - posY) / 60;
-            heroBg.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg) scale(1.05)`;
-        }
     });
 
     // Add hover effect to links and buttons
@@ -176,6 +168,66 @@ gsap.utils.toArray('.timeline-item').forEach((item, i) => {
         }
     });
 });
+
+// Projects Slider Wrapper Animation
+gsap.to('.projects-slider-wrapper', {
+    y: 0,
+    opacity: 1,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: '.projects-slider-wrapper',
+        start: 'top 85%',
+    }
+});
+
+// Slider Logic
+const projectSlider = document.getElementById('projectSlider');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+let currentSlide = 0;
+
+if (projectSlider && prevBtn && nextBtn) {
+    const slides = projectSlider.querySelectorAll('.slide-card');
+    const updateSlider = () => {
+        // Calculate gap and slide width
+        const gap = 30; // 30px gap from css
+        const slideWidth = slides[0].offsetWidth;
+        const totalSlides = slides.length;
+        
+        // Determine how many slides are visible (roughly) based on window width
+        const slidesPerView = window.innerWidth <= 768 ? 1 : 2;
+        const maxSlide = Math.max(0, totalSlides - slidesPerView);
+        
+        // Ensure bounds
+        if (currentSlide < 0) currentSlide = 0;
+        if (currentSlide > maxSlide) currentSlide = maxSlide;
+        
+        const translateX = -(currentSlide * (slideWidth + gap));
+        projectSlider.style.transform = `translateX(${translateX}px)`;
+        
+        // Update button states
+        prevBtn.style.opacity = currentSlide === 0 ? "0.5" : "1";
+        prevBtn.style.pointerEvents = currentSlide === 0 ? "none" : "auto";
+        
+        nextBtn.style.opacity = currentSlide === maxSlide ? "0.5" : "1";
+        nextBtn.style.pointerEvents = currentSlide === maxSlide ? "none" : "auto";
+    };
+
+    nextBtn.addEventListener('click', () => {
+        currentSlide++;
+        updateSlider();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        currentSlide--;
+        updateSlider();
+    });
+
+    window.addEventListener('resize', updateSlider);
+    // Initial call
+    updateSlider();
+}
 
 // Education Cards
 gsap.to('.edu-card', {
