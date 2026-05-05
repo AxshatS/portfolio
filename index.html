@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +8,17 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
@@ -34,10 +38,9 @@
 
     <main id="smooth-wrapper">
         <div id="smooth-content">
-            
+
             <!-- Hero Section -->
             <section class="hero" id="home">
-                <div class="hero-bg"></div>
                 <div class="hero-content">
                     <p class="hero-intro">Hello, I am</p>
                     <h1 class="hero-title">
@@ -58,7 +61,9 @@
                     <h2 class="section-title">About Me</h2>
                     <div class="about-content">
                         <p class="reveal-text">
-                            I enjoy working with ideas that make people stop, think, and engage. Having completed professional training in digital marketing, I'm eager to begin my journey in this field, learn through real experiences, and bring creative energy to every project I take on.
+                            I enjoy working with ideas that make people stop, think, and engage. Having completed
+                            professional training in digital marketing, I'm eager to begin my journey in this field,
+                            learn through real experiences, and bring creative energy to every project I take on.
                         </p>
                     </div>
                 </div>
@@ -86,7 +91,7 @@
                             <h3>Online Branding</h3>
                         </div>
                     </div>
-                    
+
                     <div class="languages-wrapper mt-5">
                         <h3 class="subsection-title">Languages</h3>
                         <div class="language-tags">
@@ -125,6 +130,62 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="projects-slider-wrapper mt-5">
+                        <h3 class="subsection-title mb-4">Featured Projects (Websites)</h3>
+                        <div class="slider-container">
+                            <div class="slider-track" id="projectSlider">
+                                <div class="slide-card">
+                                    <div class="slide-content">
+                                        <h4>Nora Super 50</h4>
+                                        <p>Coaching Institute Website Design</p>
+                                        <div class="slide-tech">
+                                            <span>UI/UX</span>
+                                            <span>Landing Page</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide-card">
+                                    <div class="slide-content">
+                                        <h4>Glorify Worx</h4>
+                                        <p>Agency Website Development & Responsiveness</p>
+                                        <div class="slide-tech">
+                                            <span>Frontend</span>
+                                            <span>Tailwind</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide-card">
+                                    <div class="slide-content">
+                                        <h4>Aura Boutique</h4>
+                                        <p>E-commerce Setup & Store Design</p>
+                                        <div class="slide-tech">
+                                            <span>Shopify</span>
+                                            <span>E-commerce</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide-card">
+                                    <div class="slide-content">
+                                        <h4>Lumina Digital</h4>
+                                        <p>Marketing Portfolio Template</p>
+                                        <div class="slide-tech">
+                                            <span>Web Design</span>
+                                            <span>HTML/CSS</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider-controls">
+                                <button class="slider-btn prev-btn" id="prevBtn">
+                                    <i data-lucide="chevron-left"></i>
+                                </button>
+                                <button class="slider-btn next-btn" id="nextBtn">
+                                    <i data-lucide="chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -132,7 +193,7 @@
             <section class="education section-padding bg-darker" id="education">
                 <div class="container">
                     <h2 class="section-title">Education & Certifications</h2>
-                    
+
                     <div class="edu-grid">
                         <div class="edu-column">
                             <h3 class="subsection-title mb-4">Education</h3>
@@ -145,7 +206,7 @@
                                 <p>Currently pursuing practical experience</p>
                             </div>
                         </div>
-                        
+
                         <div class="edu-column">
                             <h3 class="subsection-title mb-4">Certifications</h3>
                             <ul class="cert-list">
@@ -203,8 +264,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
-    
+
     <!-- Custom JS -->
     <script src="script.js"></script>
 </body>
+
 </html>
